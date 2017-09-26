@@ -1,4 +1,4 @@
-var fs = require("fs");
+const fs = require("fs");
 
 const content = "This file and its content is written using NodeJs!";
 const testDir = "temp/";

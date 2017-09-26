@@ -1,17 +1,17 @@
-var EventEmitter = require("events").EventEmitter;
-var util = require("util");
+const EventEmitter = require("events").EventEmitter;
+const util = require("util");
 
-var resource = function (numOfLoops) {
+const resource = function (numOfLoops) {
 
   var count = 0;
-  var self = this;
+  const self = this;
   self.emit("start");
 
   process.nextTick(function () {
-    var interval = setInterval(function () {
+    const interval = setInterval(function () {
       self.emit("data", ++count);
       if (count === numOfLoops) {
-        self.emit("end");
+        self.emit("end", numOfLoops);
         clearInterval(interval);
       }
     }, 10)
@@ -21,7 +21,7 @@ var resource = function (numOfLoops) {
 module.exports = resource;
 util.inherits(resource, EventEmitter);
 
-var myEmitter = new resource(10);
+const myEmitter = new resource(10);
 
 myEmitter.on("start", function () {
   console.log("Event emitter is started");

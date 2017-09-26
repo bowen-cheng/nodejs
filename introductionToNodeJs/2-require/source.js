@@ -1,6 +1,6 @@
-var name = "Bill";
+const name = "Bill";
 
-var print = function () {
+const print = function () {
   console.log("This message is printed from print function")
 };
 

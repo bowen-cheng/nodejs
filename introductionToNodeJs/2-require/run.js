@@ -1,7 +1,7 @@
-var name = require("./source").myName;
-var print = require("./source").myPrint;
+const name = require("./source").myName;
+const print = require("./source").myPrint;
 
-var source = require("./source");
+const source = require("./source");
 
 console.log("Name is " + name);
 print();

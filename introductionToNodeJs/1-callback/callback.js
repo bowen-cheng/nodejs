@@ -1,8 +1,8 @@
 // node convention: error is the first parameter of callback functions
 
-var maxTime = 1000;
+const maxTime = 1000;
 
-var myCallback = function(error, message){
+const myCallback = function (error, message) {
   if (error !== undefined) {
     console.error("Fail: " + error.message);
   } else {
@@ -10,14 +10,18 @@ var myCallback = function(error, message){
   }
 };
 
-var evenNumberDoubler = function (number, callback) {
-  var duration = Math.random()*maxTime;
+const evenNumberDoubler = function (number, callback) {
+  var duration = Math.random() * maxTime;
   if (number % 2 === 0) {
-    var result = (number*2).toString();
-    setTimeout(function() {callback(undefined, result);}, duration);
+    var result = (number * 2).toString();
+    setTimeout(function () {
+      callback(undefined, result);
+    }, duration);
   } else {
     var error = new Error("It's an odd number!");
-    setTimeout(function() {callback(error, "error");}, duration);
+    setTimeout(function () {
+      callback(error, "error");
+    }, duration);
   }
 };
 

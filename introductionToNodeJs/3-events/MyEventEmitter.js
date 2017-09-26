@@ -1,14 +1,14 @@
-var EventEmitter = require("events").EventEmitter;
+const EventEmitter = require("events").EventEmitter;
 
-var getResourceEmitter = function (numOfLoops) {
+const getResourceEmitter = function (numOfLoops) {
 
-  var emitter = new EventEmitter();
+  const emitter = new EventEmitter();
 
   process.nextTick(function () {
     var count = 0;
     emitter.emit("start");
     // Execute the anonymous function every 10 milli seconds
-    var timeout = setInterval(function () {
+    const timeout = setInterval(function () {
       emitter.emit("data", ++count);
       if (count === numOfLoops) {
         emitter.emit("end", count);
@@ -20,7 +20,7 @@ var getResourceEmitter = function (numOfLoops) {
   return emitter;
 };
 
-var resource = getResourceEmitter(8);
+const resource = getResourceEmitter(8);
 
 resource.on("start", function () {
   console.log("Event emitter is started");
