@@ -1,7 +1,7 @@
 // Run via the command line as "./node_modules/mocha/bin/mocha mocha.js"
 
-var should = require('should');
-var math = require('./math');
+const should = require('should');
+const math = require('./math');
 
 describe('Math', function () {
   describe('when used synchronously', function () {
