@@ -29,5 +29,3 @@ for (var i = 0; i < 10; i++) {
   console.log("Doubling " + i);
   evenNumberDoubler(i, myCallback);
 }
-
-module.exports.evenDoubler = evenNumberDoubler;
